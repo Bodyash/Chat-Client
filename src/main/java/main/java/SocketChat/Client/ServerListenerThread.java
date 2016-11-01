@@ -7,11 +7,12 @@ import java.io.InputStreamReader;
 public class ServerListenerThread implements Runnable {
 	
 	private InputStream is;
-	
+	//Принимаем стрим
 	public ServerListenerThread(InputStream is) {
 		this.is = is;
 	}
-
+	//Все что ниже - читаем стрим, печатаем в консоль.
+	//Думаю обьяснять почему этот код в отдельном потоке - не нужно
 	@Override
 	public void run() {
 		try (BufferedReader br = new BufferedReader(new InputStreamReader(this.is))){
